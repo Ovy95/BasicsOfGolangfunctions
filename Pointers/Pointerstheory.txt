@@ -1,0 +1,20 @@
+Pointer The location at which a vlaue is stored
+
+Pointer Value : The address of a variable
+
+With a pointer we can read or update the value of a variable indirectly
+
+Not every value has an address but every variable does
+
+Pointer aliasing : Using a pointer is like creating a new alias for a variable 
+x:= 1
+p:= &x
+ 
+ // *p is a alias for x 
+
+ &x (address of x ): yields a pointer to the integer varable x that is of a values of type *int
+
+
+ examples 
+
+
