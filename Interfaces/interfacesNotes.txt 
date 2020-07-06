@@ -17,3 +17,13 @@ Type Name interface {
 Interfaces in Go normally contain less than four methods 
 
 Real world example of interface A remote control is a type of interface you use the buttons, without knowing whats happening under the hood
+
+
+Conversion / Type Casting 
+
+Conversion
+Narrowing Converting a larger type to a samller like  float 64 to a int 
+widening converting a smaller type to a larger  like in to float64
+
+Conversion use 'Strconv' Package the most common numeric conversions are Atoi string to int and Itoa int to string 
+
