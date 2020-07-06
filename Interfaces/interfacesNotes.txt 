@@ -1,0 +1,19 @@
+
+
+Interface is similar to class. It is a collection of abstract methods.
+Writing an interface is simular to writing a class. But a class Describes the attributes and behaviours of an object. And an interface contains behaviours that a class implements 
+
+PolyMorphism 
+Is the capability of a method to do diffderent things based on the object that is actign upon.
+PolyMorphism allowes you define one interface and have multiple implementations
+
+In Go an interface defines a set of methods that do not contain code (abstract methods); an interface cannot contain variables 
+
+Interface format
+Type Name interface {
+  method1 (param_list) return_type // no body
+  method2 (param_list) return_type //
+}
+Interfaces in Go normally contain less than four methods 
+
+Real world example of interface A remote control is a type of interface you use the buttons, without knowing whats happening under the hood
