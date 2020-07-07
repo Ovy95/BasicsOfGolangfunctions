@@ -1,0 +1,13 @@
+GoRoutines 
+
+GoRoutines is a lightweight, independently executing function (managed by the Go runtime) that can run concurrently with other activities/ functions.
+- When the program starts, the main routine gets created by default
+- The main routine is the place that we can create child routines 
+- Routines (Including main) are independent
+- GoRoutines cannot stop one another, but can communicate and send requests (including stop requests) to one another.
+- a go routine has its own stack which grows and shrinks 
+- Goroutines are lightweight and many of them can be easily created and run at the same time 
+
+- Use the 'go' statements to create new Goroutines
+
+type WaitGroup
