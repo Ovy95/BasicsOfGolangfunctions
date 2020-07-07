@@ -45,3 +45,9 @@ go run -race main.go
 This command can be run to find possible race conditions, 
 It prints the results, and gives some infomauton about the race.
 
+Mutex  (mutual exclusion)
+
+- Mutex is a property of Concurrency control, 
+which is insituted for the purpose of preventing race conditions. 
+It is the requirement that one thread of execution never enters its critical section at the same time that another concurrent thread of execution enters its own critcal section 
+
