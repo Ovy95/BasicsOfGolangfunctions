@@ -1,0 +1,18 @@
+Channels Theory 
+
+Channels must be of the same type an example sending a string to string or int to int 
+
+Two Operations of a channel send and receive (Communications)
+
+c <-x   // Send - Sends a value x to the channel c 
+x = <-c // receive - reads from the channels c and saves in variable x 
+<-c     // receive - result is discarded
+
+channel support a third operation close()
+close sets a flag indicating that no more values will be sent on this channel;
+To close a channel: close(ch)
+
+On a closed channel:
+Further 'Send' Operations will panic 
+Further 'receive' operation receive the already sent values, until no more value are left
+after that completion point, any receive operations immediately concludes and yields the zero value of the channel's element type
