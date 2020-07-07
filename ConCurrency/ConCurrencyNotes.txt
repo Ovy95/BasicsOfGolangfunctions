@@ -51,3 +51,9 @@ Mutex  (mutual exclusion)
 which is insituted for the purpose of preventing race conditions. 
 It is the requirement that one thread of execution never enters its critical section at the same time that another concurrent thread of execution enters its own critcal section 
 
+Package Atomic 
+
+Package atomic provides low-level atomiuc memory primitives useful for implementing synchronization algorithms.
+These functions require great care to be used correctly 
+-Except for special, low level applications, synchronization is better done with channels of the facilites of the sync package.
+
