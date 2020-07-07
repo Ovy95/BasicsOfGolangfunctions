@@ -11,3 +11,16 @@ GoRoutines is a lightweight, independently executing function (managed by the Go
 - Use the 'go' statements to create new Goroutines
 
 type WaitGroup
+
+- A WaitGroup waits for a collection of GoRoutines to finish.
+- The main Goroutines calls Add to set the number of Goroutines to wait for.
+- then each of the Goroutines runs and calls Done when finished
+at the same time, Wait can be used to block until all Goroutines have finished.
+A WaitGroup must not be copied after first ues 
+
+- func (wg *WaitGroup)Add(delta int)
+Add adds delta which may be negative, to the WaitGroup counter. If the counter becomes zero, all Goroutines blocked on wait are released. If the counter goes negative, Add panics.
+- func(wg *WaitGroup) Done()
+done decrements the WaitGroup counter by one.
+func (wg *WaitGroup) Wait()
+wait blocks until the WaitGroup counter is zero.
