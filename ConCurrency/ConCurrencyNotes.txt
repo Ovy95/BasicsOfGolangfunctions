@@ -24,3 +24,24 @@ Add adds delta which may be negative, to the WaitGroup counter. If the counter b
 done decrements the WaitGroup counter by one.
 func (wg *WaitGroup) Wait()
 wait blocks until the WaitGroup counter is zero.
+
+Concurrency & Parallelism 
+
+Concurrency is like 'inhaling' and 'talking' . You can't do both at the same time. You take turns, but it's that fast it's not noticeable.
+
+Parallelism is like 'breathing' 'Sleeping' and 'dreaming' All can be done at the same time with no short interruptions 
+
+A blocking call : any statement (normally call to another routine ) that its execution takes long, and the rest of the code waits for it to complete is called a blocking call 
+for instance a call to a busy server that the serve response may be immediate or may take several minutes 
+
+with one CPU, the scheduler simulates Concurrency by executing a slives of a go routine one at a time. If one thread/Goroutine is blocked, another one is executed
+With muiltiple CPUs multiple Goroutines are executed at the same time at differeent CPUS 
+
+Race condition 
+
+Happens when more than once process try to access the same resource 
+
+go run -race main.go 
+This command can be run to find possible race conditions, 
+It prints the results, and gives some infomauton about the race.
+
