@@ -1,7 +1,3 @@
-// The problem with this is that one of the channels is going to close first not allowing both Wordsets
-// to be executed which will result in a Panic error like shown if tried running the program
-// See 5 Semaphore.go on how this issue is solved
-
 package main
 
 import "fmt"
