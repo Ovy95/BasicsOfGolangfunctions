@@ -16,3 +16,19 @@ On a closed channel:
 Further 'Send' Operations will panic 
 Further 'receive' operation receive the already sent values, until no more value are left
 after that completion point, any receive operations immediately concludes and yields the zero value of the channel's element type
+
+Unbuffered (synchronous) Channels
+
+by default, Communication is unbuffered (synchronous);
+
+It means that a 'send' does not complete until a 'receiver' accepts the value;
+
+This is blocking behaviour of Unbuffered channels tells us that there is no spaces in the channel for data 
+( because for any 'send' there must be a 'receive' and vice versa);
+
+in short , channel operations (i.e send/receive) block until the other side is ready;
+
+Communcation can be seen as a form of synchronous when goroutines share data through a 
+channel that synchronizes to Communicate with those goroutines. Clearly unbuffered channels
+are the perfect candidate for synchronizing Communcation of multiple goroutines 
+
