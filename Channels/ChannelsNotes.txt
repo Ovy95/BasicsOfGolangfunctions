@@ -76,3 +76,30 @@ func rcv(in <- chan int){
   fmt.Println(<-out) // ok
 }
 
+__________________________
+
+Multiplexing :
+In telecommuncations and computer networks, Multiplexing is a method by which multiple analog or
+digital signals are combined into one signal
+over a shared medium. The aim is to share a scarce resource. For example , in telecommuncations,
+several telephone calls may be carried using one wire
+
+To extend this concept to a typical client-server application, many clients may send requests to a server (that is the shared scarce resource),
+The server then processes the received requests and sends responeses back to the clients 
+
+To multiplex operations we need a select statement:
+
+select {
+  case <- ch1:
+    //
+  case x <- ch2
+    // use x 
+  case ch3 <- y
+    //
+  default
+}
+
+The select statement is used to choose from multiple send/receive channel operations
+
+The select statement bloicks until one of the send/receive operations is ready 
+If multiple operations are ready, one of them will randomly be picked 
