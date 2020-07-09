@@ -42,3 +42,37 @@ that a program is free from these problems
 
 Semaphores which allow an arbitrary resource count are called counting semaphores, while semaphores which are restricted to the values 0 and 1
 (or locked/unlocked, unavailable/available) are called binary semaphores and are used to implement locks
+
+
+Channel Direction 
+
+3 different types of channels 
+
+Bidrectional channel 
+Used for send and receive, which was used for exercise 7 sending the text to the channel then returning the channel with the text being effected by the function
+(Upper/Lowercase)
+
+func bi(c chan int) {
+  c <- 10           // ok
+  fmt.Println(<-c)  // ok
+}
+
+
+Send only channel 
+Only sends information
+
+func snd(out chan <- int){
+  out <- 10          // ok 
+  fmt.Println(<-out) // error - receive from send-only type
+}
+
+Receive only channel
+Only accepts information
+* Receive-only channels cannot be closed, because closing a channel is a way for the sender to say that no more values will be sent
+to the channel, that doesn't make sense for receive- only channels.
+
+func rcv(in <- chan int){
+  in <- 10           // error - send to receive-only type
+  fmt.Println(<-out) // ok
+}
+
