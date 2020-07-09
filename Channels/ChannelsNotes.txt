@@ -103,3 +103,19 @@ The select statement is used to choose from multiple send/receive channel operat
 
 The select statement bloicks until one of the send/receive operations is ready 
 If multiple operations are ready, one of them will randomly be picked 
+__________________________
+Buffered Channels (asynchronous / non-blocking):
+
+The capacity argument of make is bigger than zero c := make(chan int, 3)
+c:= make(chan channelType, channelCapacity)
+
+a Send operation: adds an elelment to the end of the queue:
+a Receive Operation :removes an element from the front 
+
+'Sends' to a Buffered channel are blocked only when the buffer is full 
+if the channel is 'full'->
+'send' operation blocks until a 'receive' operation makes a space available.
+
+'Receive' from a buffered channel are blocked only when the buffer is empty.
+if the channel is 'empty' ->
+'receive' operation blocks until a 'send' operation send a value
