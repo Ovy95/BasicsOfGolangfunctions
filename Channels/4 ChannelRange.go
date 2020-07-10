@@ -4,7 +4,10 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 var wordSet1 = []string{"small", "medium", "large"}
 var wordSet2 = []string{"red", "green", "blue", "Yellow"}
@@ -15,7 +18,7 @@ func main() {
 	go queue1(c)
 	go queue2(c)
 
-	// time.Sleep(2 * time.Second)
+	time.Sleep(2 * time.Second)
 	for val := range c {
 		fmt.Println(val)
 	}
